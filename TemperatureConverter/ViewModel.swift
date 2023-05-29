@@ -32,19 +32,4 @@ class ViewModel: ObservableObject {
             }
         }
     }
-    
-//    func convertToFar() {
-//        if let celsiusVal = Double(celsius) {
-//            let farValue = (celsiusVal * 9/5) + 32
-//            fareinheit = String(format: "%.2f", farValue)
-//            print(fareinheit)
-//        }
-//    }
-//
-//    func convertToCels() {
-//        if let farValue = Double(fareinheit) {
-//            let celsValue = (farValue - 32) * 5/9
-//            celsius = String(format: "%.2f", celsValue)
-//        }
-//    }
 }
