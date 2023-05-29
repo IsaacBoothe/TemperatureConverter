@@ -22,16 +22,16 @@ struct ContentView: View {
                 .foregroundColor(Color.white)
                 .cornerRadius(5)
             
-            Spacer()
+                Spacer()
             
             VStack{
                 TextField("Enter Temperature:", text: $viewModel.input)
                     .padding()
-                    .foregroundColor(Color.black)
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.blue, lineWidth: 3)
                         )
+                    .padding(.bottom, 20)
                     
                 Toggle("to \(viewModel.tempType ? "Cels:" : "Fahr:")", isOn: $viewModel.tempType)
                     .padding()
@@ -39,8 +39,17 @@ struct ContentView: View {
                     .foregroundColor(Color.white)
                     .cornerRadius(5)
                 
-                Button("Convert") {
-                    viewModel.convertTemp()
+                ZStack{
+                    Capsule()
+                        .frame(height: 50)
+                        .foregroundColor(Color.white)
+                        .padding()
+                        
+                    Button("Convert") {
+                        viewModel.convertTemp()
+                    }.padding()
+                        .foregroundColor(Color.blue)
+                        .scaleEffect()
                 }
                 
                 TextField("Result: ", text: $viewModel.result)
@@ -57,7 +66,10 @@ struct ContentView: View {
             Spacer()
             
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .background(Color.gray)  
+            .background(Color.gray)
+            .onAppear {
+                print("ba;;s")
+            }
     }
 }
 
